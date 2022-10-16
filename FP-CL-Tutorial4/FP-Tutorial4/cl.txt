@@ -1,0 +1,13 @@
+not(a ∧ b) = ¬a ∨ ¬b
+
+Derive the second of the de Morgan's laws
+let x = (A and B)
+let y = A' or B'
+element z belong to x
+
+z = not (a and B)
+z != a and B
+z is not A or z is not b
+z is A' or z is B'
+z is A' or B'
+It hence implies that X |= Y

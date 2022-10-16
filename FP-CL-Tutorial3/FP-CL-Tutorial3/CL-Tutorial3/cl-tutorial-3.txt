@@ -1,0 +1,39 @@
+Exercise 1
+
+
+All diligent students are successful.
+All ignorant students are unsuccessful.
+∴ Some diligent students are ignorant.
+
+Not sound as there is no overlap on Venn diagram between A and C
+as:
+
+all a is b
+no c is b
+hence no a is c
+It would be sound if No diligent students are ignorants
+
+
+Every eagle can fly.
+Some pigs cannot fly.
+∴ Some pigs are not eagles.
+
+This one is sound as can be derived from Barbara.
+Also second line establishes a fact that there are some pigs (that do not overlap with other predicates on venn diagram - sign x)
+As there is no overlap between a and c on Venn diagram the statement is sound
+
+Question 5
+
+1. Every big amber things has a thick border is false
+
+and isBig, isAmber |/= hasThickBorder
+
+2. Some small thing is a disc 
+
+or isSmall |= isDisc
+
+3. Some small sqaure is Amber
+
+or isSmall, isSqaure |/= isAmber
+
+(I am using "and" for "All" and "or" for "Some". I dont know what other notation to use)
