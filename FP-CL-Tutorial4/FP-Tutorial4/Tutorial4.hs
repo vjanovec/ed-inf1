@@ -48,7 +48,7 @@ prop_aboves i l =  abovesComp i l == abovesRec i l && abovesComp i l == abovesHO
 -- 3. parity
 -- a.
 xor :: Bool -> Bool -> Bool
-xor i j =  not i == j
+xor i j =  i /= j
 
 -- b.
 parityRec :: [Bool] -> Bool
@@ -130,6 +130,12 @@ timesM m1 m2 = [zipWith (*) r1 r2 | valid m1 && valid m2, r1 <- m1, r2 <- m2]
 -- dimensions heigth M1 and width M2
 
 -- ** Challenge
+
+-- Tutorial Challenge
+f :: [String] -> String
+f (s) = map  
+
+
 
 -- 8.
 -- Mapping functions
