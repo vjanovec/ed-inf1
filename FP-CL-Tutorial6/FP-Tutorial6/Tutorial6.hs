@@ -216,19 +216,43 @@ False
 
 -- 5.
 isNNF :: Prop -> Bool
-isNNF = undefined
+isNNF (Not (p :&&: q)) = False
+isNNF (Not (p :||: q)) = False
+isNNF (p :->: q) = False
+isNNF (p :<->: q) = False
+isNNF (p :||: q) = isNNF p && isNNF q
+isNNF (p :&&: q) = isNNF p && isNNF q
+isNNF p = True
 
 -- 6.
 impElim :: Prop -> Prop
-impElim = undefined
+impElim (p :->: q) = Not (p) :||: q
+impElim (p :<->: q) = impElim (p :->: q) :&&: impElim (q :->: p)
+impElim (Not (Not (p))) = impElim p
+impElim (Not (p :->: q)) = Not (Not (p) :||: q)
+impElim (Not (p :<->: q)) = Not(impElim (p :->: q) :&&: impElim (q :->: p))
+impElim (p :&&: q) = impElim p :&&: impElim q
+impElim (p :||: q) = impElim p :||: impElim q
+impElim (Not (p :&&: q)) = Not(impElim p :&&: impElim q)
+impElim (Not (p :||: q)) = Not (impElim p :||: impElim q)
+impElim p = p
+
+
 
 --7.
 notElim :: Prop -> Prop
-notElim = undefined
+notElim (p :||: q) = notElim p :||: notElim q
+notElim (p :&&: q) = notElim p :&&: notElim q
+notElim (Not (p :||: q)) = notElim (Not p) :&&: notElim (Not q)
+notElim (Not (p :&&: q)) = notElim (Not p) :||: notElim(Not q)
+notElim (p :->: q) = error "no implication error1"
+notElim (p :<->: q) = error "no implication error2"
+notElim (Not (Not p)) = notElim p
+notElim p = p
 
 --8.
 toNNF :: Prop -> Prop
-toNNF = undefined
+toNNF p = notElim (impElim p)
 
 -- check if result of toNNF is in neg. normal form
 prop_NNF1 :: Prop -> Bool
