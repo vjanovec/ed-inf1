@@ -1,2 +1,2 @@
-# ed-inf1
-University of Edinburgh Informatics 1 Solutions PRIVATE
+# Introduction to Computation and Logic (Haskell)
+University of Edinburgh Informatics 1 Tutorials
